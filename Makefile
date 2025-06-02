@@ -6,7 +6,7 @@
 #    By: lupayet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 09:34:40 by lupayet           #+#    #+#              #
-#    Updated: 2025/05/21 11:27:56 by lupayet          ###   ########.fr        #
+#    Updated: 2025/06/02 22:07:59 by lupayet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RM = rm -f
 
 LIBFTDIR = ./libft
 LIBFTNAME = libft.a
-SRC	= ft_printf.c
+SRC	= ft_printf.c print_ap.c
 
 OBJ	= $(SRC:.c=.o) 
 

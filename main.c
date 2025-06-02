@@ -6,11 +6,12 @@
 /*   By: lupayet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 11:58:54 by lupayet           #+#    #+#             */
-/*   Updated: 2025/05/30 17:29:21 by lupayet          ###   ########.fr       */
+/*   Updated: 2025/06/02 23:28:43 by lupayet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "ft_printf.h"
 
 int	main()
 {
@@ -20,28 +21,45 @@ int	main()
 	int		ni = -42;
 	
 	printf(" => %d\n", printf("char : %c", c));
+	ft_printf(" => %d\n", ft_printf("char : %c", c));
 
 	printf(" => %d\n", printf("str  : %s", s));
+	ft_printf(" => %d\n", ft_printf("str  : %s", s));
 
-	printf(" => %d\n", printf("ptr  : %p", s));
+	printf(" => %d\n", printf("ptr  : %p", NULL));
+	ft_printf(" => %d\n", ft_printf("ptr  : %p", NULL));
 
 	printf(" => %d\n", printf("dec  : %d", i));
+	printf(" => %d\n", printf("dec  : %d", i));
+
 
 	printf(" => %d\n", printf("int  : %i", i));
+	ft_printf(" => %d\n", ft_printf("int  : %i", i));
 	
 	printf(" => %d\n", printf("-int : %i", ni));
+	ft_printf(" => %d\n", ft_printf("-int : %i", ni));
+
 
 	printf(" => %d\n", printf("udec : %u", i));
+	ft_printf(" => %d\n", ft_printf("udec : %u", i));
 
 	printf(" => %d\n", printf("x    : %x", i));
+	ft_printf(" => %d\n", ft_printf("x    : %x", i));
 
 	printf(" => %d\n", printf("X    : %X", i));
+	ft_printf(" => %d\n", ft_printf("X    : %X", i));
 
 	printf(" => %d\n", printf("%%    : %%"));
+	ft_printf(" => %d\n", ft_printf("%%    : %%"));
 
 	printf("BONUS\n");
 
 	printf("%#xlol", i);
 
-	printf("%q");
+	//printf("%q", );
+
+	printf("My PrintF\n");
+
+	ft_printf(" => %d\n", ft_printf("TEST"));
+	ft_printf(" => %d\n", ft_printf("dec  : %d", i));
 }
