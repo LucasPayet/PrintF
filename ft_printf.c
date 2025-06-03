@@ -6,14 +6,14 @@
 /*   By: lupayet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 10:35:20 by lupayet           #+#    #+#             */
-/*   Updated: 2025/06/02 23:31:11 by lupayet          ###   ########.fr       */
+/*   Updated: 2025/06/03 10:43:11 by lupayet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include "ft_printf.h"
 
-int print_ap(char spec, va_list ap)
+int	print_ap(char spec, va_list ap)
 {
 	int	c;
 
@@ -25,13 +25,13 @@ int print_ap(char spec, va_list ap)
 	else if (spec == 'p')
 		c += print_p(va_arg(ap, void *));
 	else if (spec == 'd' || spec == 'i')
-		c += print_n((long)va_arg(ap, int), 10);
+		c += print_n((long)va_arg(ap, int), 10, "0123456789");
 	else if (spec == 'u')
-		c += print_n(va_arg(ap, unsigned int), 10);
+		c += print_n(va_arg(ap, unsigned int), 10, "0123456789");
 	else if (spec == 'x')
-		c += print_n((long)va_arg(ap, unsigned int), 16);
+		c += print_n((long)va_arg(ap, unsigned int), 16, "0123456789abcdef");
 	else if (spec == 'X')
-		c += print_X((long)va_arg(ap, unsigned int));
+		c += print_n((long)va_arg(ap, unsigned int), 16, "0123456789ABCDEF");
 	else
 		c += write(1, &spec, 1);
 	return (c);
@@ -39,12 +39,13 @@ int print_ap(char spec, va_list ap)
 
 int	ft_printf(const char *format, ...)
 {
-	int	c;
-	va_list ap;
+	int		c;
+	va_list	ap;
 
 	c = 0;
 	va_start(ap, format);
-
+	if (!format)
+		return (-1);
 	while (*format)
 	{
 		if (*format != '%')
