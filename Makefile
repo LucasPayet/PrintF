@@ -6,7 +6,7 @@
 #    By: lupayet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 09:34:40 by lupayet           #+#    #+#              #
-#    Updated: 2025/06/02 22:07:59 by lupayet          ###   ########.fr        #
+#    Updated: 2025/06/04 14:12:19 by lupayet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,14 +33,16 @@ makelibft:
 	cp $(LIBFTDIR)/$(LIBFTNAME) .
 	mv $(LIBFTNAME) $(NAME)
 
-$(NAME): makelibft $(OBJ)
+$(NAME): $(OBJ)
+	make makelibft
 	$(AR) $(NAME) $(OBJ)
 
 clean:
 	$(RM) $(OBJ)
 	make clean -C $(LIBFTDIR)
 
-fclean: clean
+fclean:
+	$(RM) $(OBJ)
 	$(RM) $(NAME)
 	make fclean -C $(LIBFTDIR)
 
