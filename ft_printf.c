@@ -6,14 +6,14 @@
 /*   By: lupayet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 10:35:20 by lupayet           #+#    #+#             */
-/*   Updated: 2025/06/03 10:43:11 by lupayet          ###   ########.fr       */
+/*   Updated: 2025/06/04 13:11:10 by lupayet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include "ft_printf.h"
 
-int	print_ap(char spec, va_list ap)
+static int	print_ap(char spec, va_list ap)
 {
 	int	c;
 
